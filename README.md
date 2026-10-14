@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#20201d">
+  <meta name="description" content="Claytone Interiors creates contemporary interiors and architectural spaces across Kerala and South India.">
+
+  <title>Claytone Interiors | Thoughtfully Designed Spaces</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #20201d;
+      --paper: #f7f5f0;
+      --sand: #c6a078;
+      --muted: #77756e;
+      --line: rgba(32,32,29,.15);
+      --white: #fff;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(1240px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    /* ANNOUNCEMENT */
+
+    .announcement {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247,245,240,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 210px;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 42px;
+    }
+
+    .brand-name {
+      font: 800 15px/1.15 "Manrope", sans-serif;
+      letter-spacing: .16em;
+    }
+
+    .brand-name span {
+      display: block;
+      margin-top: 5px;
+      font-size: 9px;
+      letter-spacing: .24em;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3vw, 38px);
+      font-size: 12px;
+      color: #45443f;
+    }
+
+    .nav-links a:hover {
+      color: #9b704b;
+    }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background: var(--ink);
+      color: white;
+      border: 1px solid var(--ink);
+      padding: 14px 20px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .nav-cta:hover,
+    .button:hover {
+      background: var(--sand);
+      border-color: var(--sand);
+      color: var(--ink);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 85px max(32px, calc((100vw - 1240px)/2));
+      padding-right: 7%;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      color: #98724f;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 25px 0 20px;
+      font: 500 clamp(42px, 5.2vw, 72px)/1.06 var(--serif);
+      letter-spacing: -.045em;
+    }
+
+    h1 em,
+    h2 em {
+      font-weight: 400;
+      color: #a27c57;
+    }
+
+    .hero-copy p {
+      max-width: 440px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    .text-link {
+      border-bottom: 1px solid var(--ink);
+      padding: 0 0 6px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 580px;
+      background: #d6d0c5;
+      overflow: hidden;
+    }
+
+    .hero-visual img {
+      position: absolute;
+      inset: 0;
+      transition: transform 1s ease;
+    }
+
+    .hero-visual:hover img {
+      transform: scale(1.035);
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      padding: 15px 18px;
+      background: rgba(247,245,240,.93);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .hero-caption span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      letter-spacing: .04em;
+      text-transform: none;
+    }
+
+    /* ABOUT */
+
+    .intro {
+      padding: 105px 0 110px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 9%;
+      align-items: start;
+    }
+
+    .section-kicker {
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #98724f;
+      font-weight: 700;
+    }
+
+    h2 {
+      font: 500 clamp(34px, 4vw, 53px)/1.13 var(--serif);
+      letter-spacing: -.035em;
+      margin: 16px 0 24px;
+    }
+
+    .intro-text {
+      max-width: 650px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #69675f;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      margin-top: 38px;
+      padding-top: 23px;
+      gap: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font: 500 32px var(--serif);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #eae5dc;
+      padding: 100px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+      max-width: 600px;
+    }
+
+    .section-head p {
+      max-width: 300px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 3px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 30px;
+      background: var(--paper);
+      min-height: 235px;
+      border: 1px solid rgba(32,32,29,.06);
+    }
+
+    .service-number {
+      color: #a27c57;
+      font: 16px var(--serif);
+    }
+
+    .service-card h3 {
+      font: 500 25px var(--serif);
+      margin: 34px 0 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      padding: 105px 0 115px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 15px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      background: #d5cec1;
+    }
+
+    .project:first-child {
+      grid-row: span 2;
+    }
+
+    .project:nth-child(4) {
+      grid-column: span 2;
+    }
+
+    .project img {
+      transition: transform .7s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.05);
+    }
+
+    .project:after {
+      content: "";
+      position: absolute;
+      inset: 35% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.58));
+    }
+
+    .project-info {
+      position: absolute;
+      z-index: 1;
+      bottom: 20px;
+      left: 22px;
+      color: white;
+    }
+
+    .project-info span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      opacity: .85;
+      margin-bottom: 8px;
+    }
+
+    .project-info h3 {
+      margin: 0;
+      font: 500 23px var(--serif);
+    }
+
+    .portfolio-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 100px 0;
+    }
+
+    .process .section-kicker {
+      color: var(--sand);
+    }
+
+    .process h2 em {
+      color: var(--sand);
+    }
+
+    .process-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+      align-items: end;
+      margin-bottom: 50px;
+    }
+
+    .process-intro p {
+      color: #b8b5ad;
+      line-height: 1.85;
+      font-size: 14px;
+      max-width: 430px;
+      margin-bottom: 5px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #4a4943;
+    }
+
+    .step {
+      padding: 25px 22px 0 0;
+    }
+
+    .step .num {
+      color: var(--sand);
+      font: 18px var(--serif);
+    }
+
+    .step h3 {
+      font: 500 22px var(--serif);
+      margin: 22px 0 10px;
+    }
+
+    .step p {
+      color: #b8b5ad;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 105px 0;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      background: #eae5dc;
+    }
+
+    .contact-copy {
+      padding: clamp(30px, 6vw, 70px);
+    }
+
+    .contact-copy h2 {
+      max-width: 500px;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 420px;
+      font-size: 14px;
+    }
+
+    .contact-details {
+      margin-top: 35px;
+      display: grid;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .contact-details small {
+      display: block;
+      color: #8c8880;
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .contact-form {
+      padding: clamp(30px, 5vw, 60px);
+      background: #f1eee8;
+    }
+
+    .field {
+      margin-bottom: 19px;
+    }
+
+    label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #c7c1b7;
+      background: transparent;
+      padding: 12px 0;
+      outline: none;
+      color: var(--ink);
+      font: 13px "DM Sans", sans-serif;
+      border-radius: 0;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #9c744f;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 65px;
+    }
+
+    .contact-form .button {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #eae5dc;
+      border-top: 1px solid var(--line);
+      padding: 27px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 10px;
+      color: #77756e;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* SCROLL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 850px) {
+      .wrap {
+        width: min(100% - 34px, 650px);
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 72px;
+        padding: 20px 24px 25px;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 70px 26px;
+      }
+
+      .hero-visual {
+        min-height: 430px;
+      }
+
+      .intro,
+      .portfolio,
+      .contact {
+        padding: 75px 0;
+      }
+
+      .intro-grid,
+      .contact-panel,
+      .process-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 20px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .service-card h3 {
+        margin-top: 22px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 220px 220px;
+      }
+
+      .project:first-child {
+        grid-row: span 1;
+      }
+
+      .project:nth-child(4) {
+        grid-column: span 2;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 28px;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 480px) {
+      .brand {
+        min-width: 0;
+      }
+
+      .brand-name {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      .hero-visual {
+        min-height: 360px;
+      }
+
+      .stats {
+        gap: 8px;
+      }
+
+      .stat strong {
+        font-size: 27px;
+      }
+
+      .stat span {
+        font-size: 8px;
+      }
+
+      .portfolio-grid {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project {
+        min-height: 260px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        gap: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    Interior Design • Architecture • Custom Furniture
+  </div>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="wrap nav">
+
+      <a class="brand" href="#home" aria-label="Claytone Interiors home">
+
+        <svg class="brand-mark" viewBox="0 0 48 52" fill="none" aria-hidden="true">
+          <path d="M5 48V20L24 3L43 20V48H5Z"
+                stroke="#24231f" stroke-width="1.4"/>
+          <path d="M13 48V24L31 8L45 22V48"
+                stroke="#24231f" stroke-width="1.2"/>
+          <path d="M20 48V34H29V48"
+                stroke="#24231f" stroke-width="1.2"/>
+        </svg>
+
+        <div class="brand-name">
+          CLAYTONE
+          <span>INTERIORS</span>
+        </div>
+
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">Studio</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Our Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="#contact">
+        Start a Project ↗
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Spaces with soul
+        </div>
+
+        <h1>
+          Thoughtful design.<br>
+          <em>Beautiful living.</em>
+        </h1>
+
+        <p>
+          We shape homes and commercial spaces around the way
+          you live, work and feel. Considered materials, honest
+          details and a timeless point of view—made personal to you.
+        </p>
+
+        <div class="hero-actions">
+
+          <a class="button" href="#projects">
+            Explore Our Work ↗
+          </a>
+
+          <a class="text-link" href="#about">
+            Meet the Studio
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <img
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90"
+          alt="Warm contemporary living room"
+          fetchpriority="high">
+
+        <div class="hero-caption">
+          Designed for real life
+          <span>Quiet luxury. Lasting character.</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+
+    <section class="intro wrap" id="about">
+
+      <div class="intro-grid reveal">
+
+        <div>
+
+          <div class="section-kicker">
+            01 / The Studio
+          </div>
+
+          <h2>
+            Good spaces make everyday life
+            <em>feel different.</em>
+          </h2>
+
+        </div>
+
+        <div>
+
+          <p class="intro-text">
+            At Claytone Interiors, we believe a well-designed
+            space is more than what you see. It is the light
+            in the morning, the ease of moving through a room,
+            the texture you reach for and the feeling of being
+            at home.
+
+            We bring architecture, interiors and detail together
+            to create spaces that feel naturally yours.
+          </p>
+
+          <div class="stats">
+
+            <div class="stat">
+              <strong>01</strong>
+              <span>Personal Approach</span>
+            </div>
+
+            <div class="stat">
+              <strong>360°</strong>
+              <span>Design Thinking</span>
+            </div>
+
+            <div class="stat">
+              <strong>∞</strong>
+              <span>Room to Imagine</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SERVICES SECTION -->
+
+    <section class="services" id="services">
+
+      <div class="wrap">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <div class="section-kicker">
+              02 / What We Do
+            </div>
+
+            <h2>
+              From first sketch to
+              <em>finishing touch.</em>
+            </h2>
+
+          </div>
+
+          <p>
+            One considered vision, carried through every
+            decision, material and detail.
+          </p>
+
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card reveal">
+
+            <span class="service-number">01</span>
+
+            <h3>Interior Design</h3>
+
+            <p>
+              Layered, functional interiors for homes and
+              workplaces, shaped around your taste and
+              everyday routines.
+            </p>
+
+          </article>
+
+          <article class="service-card reveal">
+
+            <span class="service-number">02</span>
+
+            <h3>Architecture & Renovation</h3>
+
+            <p>
+              Thoughtful planning, spatial improvements
+              and contemporary architectural concepts
+              with a sense of place.
+            </p>
+
+          </article>
+
+          <article class="service-card reveal">
+
+            <span class="service-number">03</span>
+
+            <h3>Custom Furniture</h3>
+
+            <p>
+              Purpose-built furniture, wardrobes and
+              details designed to fit your space—not
+              the other way around.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+
+    <section class="portfolio wrap" id="projects">
+
+      <div class="section-head reveal">
+
+        <div>
+
+          <div class="section-kicker">
+            03 / Selected Work
+          </div>
+
+          <h2>
+            Made with intention.<br>
+            <em>Built to be lived in.</em>
+          </h2>
+
+        </div>
+
+        <p>
+          A glimpse into the spaces, materials and
+          details that inspire us.
+        </p>
+
+      </div>
+
+      <div class="portfolio-grid reveal">
+
+        <a class="project" href="#contact"
+           aria-label="Discuss a contemporary home project">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+            alt="Contemporary residential living room"
+            loading="lazy">
+
+          <div class="project-info">
+            <span>Residential</span>
+            <h3>The Modern Home</h3>
+          </div>
+
+        </a>
+
+        <a class="project" href="#contact"
+           aria-label="Discuss a minimalist interior project">
+
+          <img
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+            alt="Minimal living space with natural materials"
+            loading="lazy">
+
+          <div class="project-info">
+            <span>Interior Design</span>
+            <h3>Natural Calm</h3>
+          </div>
+
+        </a>
+
+        <a class="project" href="#contact"
+           aria-label="Discuss an interior details project">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
+            alt="Contemporary home interior details"
+            loading="lazy">
+
+          <div class="project-info">
+            <span>Materials</span>
+            <h3>Quiet Details</h3>
+          </div>
+
+        </a>
+
+        <a class="project" href="#contact"
+           aria-label="Discuss a hospitality project">
+
+          <img
+            src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1400&q=85"
+            alt="Warm dining and lounge interior"
+            loading="lazy">
+
+          <div class="project-info">
+            <span>Hospitality</span>
+            <h3>Gathering Spaces</h3>
+          </div>
+
+        </a>
+
+      </div>
+
+      <p class="portfolio-note">
+        Note: Replace these illustrative photographs with
+        Claytone Interiors' actual completed projects before
+        publishing the website.
+      </p>
+
+    </section>
+
+    <!-- PROCESS SECTION -->
+
+    <section class="process" id="process">
+
+      <div class="wrap">
+
+        <div class="process-intro reveal">
+
+          <div>
+
+            <div class="section-kicker">
+              04 / How We Work
+            </div>
+
+            <h2>
+              A clear process.<br>
+              <em>A personal result.</em>
+            </h2>
+
+          </div>
+
+          <p>
+            Great design comes from listening first.
+            We keep the journey collaborative and considered,
+            with clear communication at every stage.
+          </p>
+
+        </div>
+
+        <div class="steps">
+
+          <article class="step reveal">
+
+            <span class="num">01</span>
+
+            <h3>Discover</h3>
+
+            <p>
+              We listen to your needs, lifestyle, ideas,
+              budget and aspirations.
+            </p>
+
+          </article>
+
+          <article class="step reveal">
+
+            <span class="num">02</span>
+
+            <h3>Imagine</h3>
+
+            <p>
+              We develop concepts, layouts, palettes
+              and a shared design direction.
+            </p>
+
+          </article>
+
+          <article class="step reveal">
+
+            <span class="num">03</span>
+
+            <h3>Refine</h3>
+
+            <p>
+              Materials, drawings and details come
+              together into a considered plan.
+            </p>
+
+          </article>
+
+          <article class="step reveal">
+
+            <span class="num">04</span>
+
+            <h3>Realise</h3>
+
+            <p>
+              We help bring the vision to life with
+              care for the finer details.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact wrap" id="contact">
+
+      <div class="contact-panel reveal">
+
+        <div class="contact-copy">
+
+          <div class="section-kicker">
+            05 / Let's Talk
+          </div>
+
+          <h2>
+            Your space has a story.
+            <em>Let's shape it.</em>
+          </h2>
+
+          <p>
+            Planning a new home, refreshing a room or
+            building a commercial space? Tell us a little
+            about it and let's start a conversation.
+          </p>
+
+          <div class="contact-details">
+
+            <div>
+              <small>Studio Location</small>
+              Kannur, Kerala, India
+            </div>
+
+            <div>
+              <small>Service Areas</small>
+              Kerala · Calicut · Kochi · Bengaluru · Chennai · Coimbatore
+            </div>
+
+            <div>
+              <small>Instagram</small>
+              <a
+                href="https://www.instagram.com/claytone.interior/"
+                target="_blank"
+                rel="noopener">
+                @claytone.interior ↗
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+          <div class="field">
+
+            <label for="name">Your Name</label>
+
+            <input
+              id="name"
+              name="name"
+              placeholder="Full name"
+              autocomplete="name"
+              required>
+
+          </div>
+
+          <div class="field">
+
+            <label for="phone">Phone / WhatsApp</label>
+
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+91"
+              autocomplete="tel"
+              required>
+
+          </div>
+
+          <div class="field">
+
+            <label for="projectType">I'm Interested In</label>
+
+            <select id="projectType" name="projectType" required>
+
+              <option value="" disabled selected>
+                Select a service
+              </option>
+
+              <option>Residential Interior</option>
+              <option>Architecture / Renovation</option>
+              <option>Custom Furniture / Wardrobe</option>
+              <option>Commercial / Hospitality</option>
+              <option>Something Else</option>
+
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label for="message">Project Details</label>
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Location, approximate size, timeline..."></textarea>
+
+          </div>
+
+          <button class="button" type="submit">
+            Send Enquiry via WhatsApp ↗
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="wrap footer-row">
+
+      <a class="brand" href="#home">
+
+        <svg class="brand-mark" viewBox="0 0 48 52" fill="none" aria-hidden="true">
+          <path d="M5 48V20L24 3L43 20V48H5Z"
+                stroke="#24231f" stroke-width="1.4"/>
+          <path d="M13 48V24L31 8L45 22V48"
+                stroke="#24231f" stroke-width="1.2"/>
+          <path d="M20 48V34H29V48"
+                stroke="#24231f" stroke-width="1.2"/>
+        </svg>
+
+        <div class="brand-name">
+          CLAYTONE
+          <span>INTERIORS</span>
+        </div>
+
+      </a>
+
+      <div>
+        © <span id="year"></span> Claytone Interiors.
+        Designed with intention.
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Enquiries</a>
+        <a
+          href="https://www.instagram.com/claytone.interior/"
+          target="_blank"
+          rel="noopener">
+          Instagram ↗
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /*
+      IMPORTANT:
+      Replace the placeholder below with the company's WhatsApp
+      number, including the country code.
+
+      Indian example:
+      const WHATSAPP_NUMBER = "919876543210";
+
+      Use digits only. Do not include +, spaces or dashes.
+    */
+
+    const WHATSAPP_NUMBER = "919XXXXXXXXX";
+
+
+    // Mobile navigation
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      const open = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(open));
+
+      menuToggle.textContent = open ? "×" : "☰";
+
+    });
+
+
+    // Close mobile navigation after selecting a section
+
+    navLinks.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.textContent = "☰";
+
+      });
+
+    });
+
+
+    // Automatically update the copyright year
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // Scroll reveal animations
+
+    const observer = new IntersectionObserver(entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.12
+    });
+
+
+    document.querySelectorAll(".reveal").forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+    // WhatsApp enquiry form
+
+    document.getElementById("contactForm").addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+        if (WHATSAPP_NUMBER.includes("X")) {
+
+          alert(
+            "Please add Claytone Interiors' WhatsApp number " +
+            "in the WHATSAPP_NUMBER variable near the bottom " +
+            "of this HTML file before using the enquiry form."
+          );
+
+          return;
+
+        }
+
+        const data = new FormData(this);
+
+        const message = [
+
+          "Hello Claytone Interiors, I'd like to discuss a project.",
+
+          `Name: ${data.get("name")}`,
+
+          `Phone: ${data.get("phone")}`,
+
+          `Service: ${data.get("projectType")}`,
+
+          `Project details: ${
+            data.get("message") || "Not provided"
+          }`
+
+        ].join("\n");
+
+
+        const whatsappURL =
+          `https://wa.me/${WHATSAPP_NUMBER}?text=${
+            encodeURIComponent(message)
+          }`;
+
+
+        window.open(
+          whatsappURL,
+          "_blank",
+          "noopener"
+        );
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
