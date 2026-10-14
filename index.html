@@ -808,6 +808,102 @@
         opacity: 1;
         transform: none;
       }
+    /* CLAYTONE HERO IMAGE SLIDER */
+
+.hero-visual {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.hero-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  transition: transform 0.65s ease;
+  touch-action: pan-y;
+}
+
+.hero-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 450px;
+}
+
+.hero-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  object-fit: cover;
+}
+
+.hero-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.hero-prev {
+  left: 14px;
+}
+
+.hero-next {
+  right: 14px;
+}
+
+.hero-slider-dots {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+}
+
+.hero-slider-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+  cursor: pointer;
+}
+
+.hero-slider-dots button.active {
+  background: white;
+  transform: scale(1.25);
+}
+
+@media (max-width: 700px) {
+  .hero-visual {
+    min-height: 450px;
+  }
+
+  .hero-slider-track,
+  .hero-slide,
+  .hero-slide img {
+    min-height: 450px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slider-track {
+    transition: none;
+  }
+  }
     }
   </style>
 </head>
@@ -901,19 +997,50 @@
 
       </div>
 
-      <div class="hero-visual">
+      <div class="hero-visual" id="heroSlider">
 
-        <img
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=90"
-          alt="Warm contemporary living room"
-          fetchpriority="high">
+  <div class="hero-slider-track">
 
-        <div class="hero-caption">
-          Designed for real life
-          <span>Quiet luxury. Lasting character.</span>
-        </div>
+    <div class="hero-slide">
+      <img
+        src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
+        alt="Elegant contemporary living room">
+    </div>
 
-      </div>
+    <div class="hero-slide">
+      <img
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85"
+        alt="Luxury modern interior">
+    </div>
+
+    <div class="hero-slide">
+      <img
+        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85"
+        alt="Beautiful contemporary home">
+    </div>
+
+  </div>
+
+  <div class="hero-caption">
+    Designed for real life
+    <span>Quiet luxury. Lasting character.</span>
+  </div>
+
+  <button class="hero-slider-arrow hero-prev"
+          type="button"
+          aria-label="Previous image">‹</button>
+
+  <button class="hero-slider-arrow hero-next"
+          type="button"
+          aria-label="Next image">›</button>
+
+  <div class="hero-slider-dots">
+    <button type="button" aria-label="Show image 1"></button>
+    <button type="button" aria-label="Show image 2"></button>
+    <button type="button" aria-label="Show image 3"></button>
+  </div>
+
+</div>
 
     </section>
 
@@ -1544,6 +1671,72 @@
       }
     );
 
+    <script>
+(() => {
+  const slider = document.getElementById("heroSlider");
+  if (!slider) return;
+
+  const track = slider.querySelector(".hero-slider-track");
+  const slides = [...slider.querySelectorAll(".hero-slide")];
+  const dots = [...slider.querySelectorAll(".hero-slider-dots button")];
+  const prev = slider.querySelector(".hero-prev");
+  const next = slider.querySelector(".hero-next");
+
+  let index = 0;
+  let startX = 0;
+  let timer;
+
+  function showSlide(n) {
+    index = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function restartTimer() {
+    clearInterval(timer);
+
+    if (slides.length > 1 &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      timer = setInterval(() => showSlide(index + 1), 5000);
+    }
+  }
+
+  prev.addEventListener("click", () => {
+    showSlide(index - 1);
+    restartTimer();
+  });
+
+  next.addEventListener("click", () => {
+    showSlide(index + 1);
+    restartTimer();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showSlide(i);
+      restartTimer();
+    });
+  });
+
+  slider.addEventListener("touchstart", event => {
+    startX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  slider.addEventListener("touchend", event => {
+    const distance = event.changedTouches[0].clientX - startX;
+
+    if (Math.abs(distance) > 50) {
+      showSlide(index + (distance < 0 ? 1 : -1));
+      restartTimer();
+    }
+  }, { passive: true });
+
+  showSlide(0);
+  restartTimer();
+})();
   </script>
 
 </body>
