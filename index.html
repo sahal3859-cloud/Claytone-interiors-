@@ -629,8 +629,7 @@ footer {
   .menu-toggle {
     display: block;
   }
-
-  ./* Mobile navigation dropdown */
+/* Mobile navigation */
 .nav {
   display: none;
   position: absolute;
@@ -638,24 +637,27 @@ footer {
   left: 0;
   right: 0;
   padding: 22px 24px;
-  background: #000000 !important;
+  background-color: #000000 !important;
   border-bottom: 1px solid #333333;
   flex-direction: column;
   gap: 18px;
-  z-index: 1000;
+  z-index: 9999;
 }
 
-/* Show menu when tapped */
+/* Open menu */
 .nav.open {
-  display: flex;
+  display: flex !important;
 }
 
-/* White menu links */
+/* Menu links */
 .nav a {
   color: #ffffff !important;
-  background: transparent !important;
+  background-color: transparent !important;
   text-decoration: none;
+  display: block;
   padding: 8px 0;
+}
+  
 }
 
 /* Subtle hover effect */
