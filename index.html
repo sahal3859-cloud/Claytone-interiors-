@@ -1251,6 +1251,30 @@ body {
 .menu-toggle::after {
     background: #ffffff !important;
 }
+  /* Fix mobile menu button */
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 28px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Keep header black */
+header {
+  background: #000000 !important;
+}
+
+/* If the menu lines use text characters */
+.menu-toggle span {
+  background-color: #ffffff !important;
+  color: #ffffff !important;
+}
 </style>
 </head>
 
