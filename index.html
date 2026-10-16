@@ -1234,6 +1234,23 @@ header .brand svg,
 body {
     background-color: #f7f5f0;
 }
+  /* FIX HAMBURGER MENU */
+.menu-toggle {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.menu-toggle span {
+    background: #ffffff !important;
+}
+
+/* Keep hamburger pseudo-elements transparent unless they form the lines */
+.menu-toggle::before,
+.menu-toggle::after {
+    background: #ffffff !important;
+}
 </style>
 </head>
 
