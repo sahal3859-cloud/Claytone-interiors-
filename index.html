@@ -630,17 +630,38 @@ footer {
     display: block;
   }
 
-  .nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: 22px 24px;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    flex-direction: column;
-    gap: 18px;
+  ./* Mobile navigation dropdown */
+.nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 22px 24px;
+  background: #000000 !important;
+  border-bottom: 1px solid #333333;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 1000;
+}
+
+/* Show menu when tapped */
+.nav.open {
+  display: flex;
+}
+
+/* White menu links */
+.nav a {
+  color: #ffffff !important;
+  background: transparent !important;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+/* Subtle hover effect */
+.nav a:hover {
+  color: #cccccc !important;
+  }
   }
 
   .nav.open {
