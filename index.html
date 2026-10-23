@@ -1244,59 +1244,77 @@ header .brand svg,
     stroke: #ffffff;
 }
 
-/* Hamburger Menu - Three Lines */
-.menu-toggle,
-.hamburger,
-.hamburger span,
-.menu-toggle span {
-    color: #ffffff !important;
-    background-color: #ffffff;
-}
-
-/* Keep the page below the header unchanged */
-body {
-    background-color: #f7f5f0;
-}
-  /* FIX HAMBURGER MENU */
-.menu-toggle {
-    background: transparent !important;
-    color: #ffffff !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.menu-toggle span {
-    background: #ffffff !important;
-}
-
-/* Keep hamburger pseudo-elements transparent unless they form the lines */
-.menu-toggle::before,
-.menu-toggle::after {
-    background: #ffffff !important;
-}
-  /* Fix mobile menu button */
-.menu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent !important;
-  color: #ffffff !important;
-  border: none !important;
-  box-shadow: none !important;
-  font-size: 28px;
-  padding: 8px;
-  cursor: pointer;
-}
-
-/* Keep header black */
+/* CLAYTONE INTERIORS — Black Header */
 header {
-  background: #000000 !important;
+position: relative;
+background: #000000 !important;
+color: #ffffff !important;
+border-bottom: 1px solid #333333;
 }
 
-/* If the menu lines use text characters */
-.menu-toggle span {
-  background-color: #ffffff !important;
-  color: #ffffff !important;
+/* White logo and brand */
+header .brand,
+header .brand-name,
+header .brand-name strong,
+header .brand-name span {
+color: #ffffff !important;
+}
+
+header .brand svg {
+stroke: #ffffff;
+}
+
+/* Hamburger button */
+.menu-toggle {
+display: none;
+background: transparent !important;
+color: #ffffff !important;
+border: none !important;
+box-shadow: none !important;
+font-size: 28px;
+padding: 8px;
+cursor: pointer;
+position: relative;
+z-index: 10001;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+.menu-toggle {
+display: block !important;
+}
+
+header .nav {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+padding: 22px 24px;
+background: #000000 !important;
+border-bottom: 1px solid #333333;
+flex-direction: column;
+gap: 18px;
+z-index: 10000;
+}
+
+header .nav.open {
+display: flex !important;
+}
+
+header .nav a {
+display: block;
+color: #ffffff !important;
+background: transparent !important;
+text-decoration: none;
+padding: 8px 0;
+}
+}
+
+/* Keep the page background unchanged */
+body {
+background-color: #f7f5f0;
+}
 }
 </style>
 </head>
